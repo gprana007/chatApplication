@@ -20,7 +20,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 public class websocketConfiguration implements WebSocketMessageBrokerConfigurer {
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/chat/ws").setAllowedOrigins("*");
+		registry.addEndpoint("/chat/ws").setAllowedOriginPatterns("*").withSockJS();
 	}
 
 	@Override
